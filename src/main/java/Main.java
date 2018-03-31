@@ -11,7 +11,7 @@ public class Main {
 
         session.beginTransaction();
 
-        User user = new User();
+        /*User user = new User();
             user.setFirst_name("test_first_name2");
             user.setLast_name("test_last_name2");
             user.setPhone(932071888);
@@ -20,7 +20,7 @@ public class Main {
         session.save(user );
 
         //Commit the transaction
-        session.getTransaction().commit();
+        session.getTransaction().commit();*/
         sessionFactory.close();
 
     }
