@@ -9,13 +9,13 @@ public interface UserDAO {
     //create
     void add(User user) throws SQLException;
 
-    //read
+/*    //read
     List<User> getAll () throws SQLException;
     User getById(Long id) throws SQLException;
 
     //update
-    void update(User user) throws SQLException;
+    void update(User user) throws SQLException;*/
 
     //delete
-    void remove (User user) throws SQLException;
+/*    void remove (User user) throws SQLException;*/
 }
