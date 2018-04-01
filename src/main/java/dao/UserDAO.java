@@ -10,4 +10,5 @@ public interface UserDAO {
     void add(User user) throws SQLException;
     //read
     List<User> getAll () throws SQLException;
+    List<User> getNameById() throws SQLException;
 }

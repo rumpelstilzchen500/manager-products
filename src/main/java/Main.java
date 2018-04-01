@@ -13,9 +13,10 @@ public class Main {
             user.setPhone(932071888);
             user.setSex("man");
 
-
+        //create
         //userService.add(user);
-
-        System.out.println(userService.getAll());
+        //read
+        //System.out.println(userService.getAll());
+        System.out.println(userService.getNameById());
     }
 }
