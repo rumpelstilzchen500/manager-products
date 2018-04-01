@@ -28,7 +28,7 @@ public class SessionUtil {
     }
 
     public void closeSession() {
-        session.close();
+       HibernateUtil.getSessionFactory().close();
     }
 
     public void closeTransactionSession() {

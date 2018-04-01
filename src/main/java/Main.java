@@ -20,6 +20,6 @@ public class Main {
 
 
         userService.add(user);
-        HibernateUtil.shutdown();
+
     }
 }
