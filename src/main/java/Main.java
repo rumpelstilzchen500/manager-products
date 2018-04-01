@@ -1,12 +1,7 @@
 import models.User;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import service.UserService;
-import util.HibernateUtil;
 
+import service.UserService;
 import java.sql.SQLException;
-import java.util.HashSet;
-import java.util.Set;
 
 public class Main {
     public static void main(String[] args) throws SQLException {
@@ -19,7 +14,8 @@ public class Main {
             user.setSex("man");
 
 
-        userService.add(user);
+        //userService.add(user);
 
+        System.out.println(userService.getAll());
     }
 }
