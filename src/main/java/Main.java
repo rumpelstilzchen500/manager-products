@@ -14,9 +14,14 @@ public class Main {
             user.setSex("man");
 
         //create
-        //userService.add(user);
+        userService.add(user);
         //read
-        //System.out.println(userService.getAll());
-        System.out.println(userService.getNameById());
+        System.out.println(userService.getAll());
+        System.out.println(userService.getNameById(3));
+        //update
+        userService.update(user);
+        //delete
+        userService.delete(user);
+
     }
 }

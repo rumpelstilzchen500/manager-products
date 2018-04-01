@@ -9,6 +9,11 @@ public interface UserDAO {
     //create
     void add(User user) throws SQLException;
     //read
-    List<User> getAll () throws SQLException;
-    List<User> getNameById() throws SQLException;
+    List<User> getAll () throws SQLException; //SQL
+    List<User> getNameById(int i) throws SQLException;//HQL
+    //update
+    void update (User user) throws SQLException;
+    //delete
+    void delete (User user) throws SQLException;
+
 }

@@ -15,27 +15,51 @@ public class UserService extends SessionUtil implements UserDAO{
         openTransactionSession();
         Session session = getSession();
         session.save(user);
-        closeTransactionSession();
+        //closeTransactionSession();
     }
 
     public List<User> getAll() throws SQLException {
         openTransactionSession();
         Session session = getSession();
-        Query query = session.createSQLQuery("SELECT first_name FROM user");//user - table
+        String sql = "SELECT first_name FROM user";
+        Query query = session.createSQLQuery(sql);//user - table
         List<User> first_nameList = query.list();
-        closeTransactionSession();
+        //closeTransactionSession();
         return first_nameList;
     }
 
-    public List<User> getNameById() throws SQLException {
+    public List<User> getNameById(int i) throws SQLException {
         openTransactionSession();
         Session session = getSession();
-        Query query = session.createQuery("SELECT U.first_name FROM User U WHERE U.id = 1"); //User - class
+        String hqlGetNameById = "SELECT U.first_name FROM User U WHERE U.id = ";
+        Query query = session.createQuery(hqlGetNameById + i ); //User - class
 
         List firstLastName = query.list();
 
-        closeTransactionSession();
+        //closeTransactionSession();
         return firstLastName;
-
     }
+    public void update(User user) throws SQLException{
+        openTransactionSession();
+        Session session = getSession();
+        String hqlUpdate = "UPDATE User SET first_name =:first_name " +
+                "where id_user = :id_user";
+        Query query = session.createQuery(hqlUpdate); //"UPDATE User SET first_name = 'Update name' where id_user = '2'"
+        query.setParameter("first_name", "Update name");
+        query.setParameter("id_user", "3");
+        query.executeUpdate();
+        //closeTransactionSession();
+    }
+
+    public void delete(User user) throws SQLException {
+        openTransactionSession();
+        Session session = getSession();
+        String hqlDelete ="DELETE FROM User WHERE first_name =:first_name " +
+                "AND id_user = :id_user";
+        Query query = session.createQuery(hqlDelete);
+        query.setParameter("first_name", "test_first_n123123123123123");
+        query.setParameter("id_user", "4");
+        query.executeUpdate();
+        closeTransactionSession();
+     }
 }
